@@ -25,5 +25,6 @@
   "homepage": "https://github.com/JackelinGM/LIM015-md-links#readme",
   "dependencies": {
     "jest": "^27.1.0"
-  }
+  },
+  "devDependencies": {}
 }
