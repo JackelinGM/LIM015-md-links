@@ -15,7 +15,8 @@
   },
   "keywords": [
     "node",
-    "js"
+    "js",
+    "md-links"
   ],
   "author": "Jackelin Melissa Gutierrez Montalban",
   "license": "ISC",
@@ -26,5 +27,8 @@
   "dependencies": {
     "jest": "^27.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "marked": "^0.7.0",
+    "node-fetch": "^2.6.0"
+  }
 }
