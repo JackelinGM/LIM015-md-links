@@ -90,10 +90,28 @@ const linksValidate = (route) => {
 };
 console.log(linksValidate('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md'));
 
+// Función que devuelve en string los links validados
+const optionValidate = (route) => new Promise((resolve) => {
+    linksValidate(route)
+    .then((arrLinks) => {
+        const strLinks = arrLinks.map((link) => `${path.relative(process.cwd(), link.filePath)} ${link.hrefPath} ${link.statusText} ${link.status} ${link.textPath}`);
+        resolve(strLinks.join('\n'));
+    });
+});
+console.log(optionValidate('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md'));
+
+const uniqueLinks = (arrLinks) => [...new Set(arrLinks.map((link) => link.hrefPath))];
+const brokenLinks = (arrValidateLinks) => arrValidateLinks.filter((link) => link.status >= 400);
+
 module.exports = { 
     verifyPath, 
     verifyTypePath, 
     listFilesMd, 
     arrayFileRoute, 
     toPathAbsolute,
+    optionValidate,
+    linksValidate, 
+    uniqueLinks,
+    brokenLinks
+
 }
