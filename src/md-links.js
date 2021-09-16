@@ -52,9 +52,9 @@ const readFileMd = (route) => {
     const links = [];
     const renderer = new marked.Renderer();
     const arrFiles = arrayFileRoute(route);
-    arrFiles.forEach((file) => {
-    const filesData = fs.readFileSync(file, 'utf8');
-    renderer.link = (href, title, text) => {
+    arrFiles.forEach((file) => {   // forEach que recorrera el array de as rutas de archivos .md
+    const filesData = fs.readFileSync(file, 'utf8');// almacenar en una constante  la funcionde leer el archivo
+    renderer.link = (href, title, text) => {// buscar los link del archivo y solicitar los argumentos
         links.push({ hrefPath: href, textPath: text, filePath: file });
     };
     marked(filesData, { renderer });
@@ -88,7 +88,10 @@ const linksValidate = (route) => {
     })));
     return Promise.all(arrLinksPromise);
 };
-console.log(linksValidate('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md'));
+
+// linksValidate('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md').then(response =>(
+//     // console.log(response)
+// ))
 
 // Función que devuelve en string los links validados
 const optionValidate = (route) => new Promise((resolve) => {
@@ -98,20 +101,51 @@ const optionValidate = (route) => new Promise((resolve) => {
         resolve(strLinks.join('\n'));
     });
 });
-console.log(optionValidate('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md'));
+
+// optionValidate('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md').then(response =>(
+//     // console.log(response)
+// ))
 
 const uniqueLinks = (arrLinks) => [...new Set(arrLinks.map((link) => link.hrefPath))];
 const brokenLinks = (arrValidateLinks) => arrValidateLinks.filter((link) => link.status >= 400);
+
+// Función que devuelve los stats de los links en string
+const optionStats = (route) => new Promise((resolve) => {
+    const arrMdLinks = readFileMd(route);
+    resolve(`Total: ${arrMdLinks.length}\nUnique: ${uniqueLinks(arrMdLinks).length}`);
+});
+
+// optionStats('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md').then(response =>(
+//     console.log(response)
+// ))
+
+// Función que devuelve los stats y validación de los links en string
+const OptionsValidateStats = (route) => new Promise((resolve) => {
+    linksValidate(route)
+    .then((links) => {
+        resolve(`Total: ${links.length}\nUnique: ${uniqueLinks(links).length}\nBroken: ${brokenLinks(links).length}`);
+    });
+});
+
+// OptionsValidateStats('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md').then(response =>(
+//     console.log('mel',response)
+// ))
+
+
+
 
 module.exports = { 
     verifyPath, 
     verifyTypePath, 
     listFilesMd, 
-    arrayFileRoute, 
     toPathAbsolute,
+    readFileMd, 
+    arrayFileRoute, 
     optionValidate,
     linksValidate, 
     uniqueLinks,
-    brokenLinks
+    brokenLinks,
+    optionStats,
+    OptionsValidateStats
 
 }
