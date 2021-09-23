@@ -5,7 +5,7 @@ const obj = require('../src/md-links.js');
 
 const mdLinks = (route, options) => new Promise((resolve, reject) => {
 if (fs.existsSync(route)) {
-    if (options && options.validate) {
+    if (options?.validate) {
     resolve(obj.linksValidate(route));
     } else {
     resolve(obj.readFileMd(route));
@@ -15,7 +15,7 @@ if (fs.existsSync(route)) {
 }
 });
 
-console.log(mdLinks('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md',obj));
+// console.log(mdLinks('./src/',obj));
 
 module.exports = { mdLinks };
 

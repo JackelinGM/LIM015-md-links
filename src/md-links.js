@@ -84,13 +84,13 @@ const linksValidate = (route) => {
     .catch(() => ({
         ...link,
         statusText: 'FAIL',
-        status: 'ERROR',
+        status: '500',
     })));
     return Promise.all(arrLinksPromise);
 };
 
 // linksValidate('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md').then(response =>(
-//     // console.log(response)
+//     console.log(response)
 // ))
 
 // Función que devuelve en string los links validados
@@ -127,8 +127,8 @@ const OptionsValidateStats = (route) => new Promise((resolve) => {
     });
 });
 
-// OptionsValidateStats('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md').then(response =>(
-//     console.log('mel',response)
+// OptionsValidateStats('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\src\\prueba\\preuba.md').then(response =>(
+//     console.log(response)
 // ))
 
 
