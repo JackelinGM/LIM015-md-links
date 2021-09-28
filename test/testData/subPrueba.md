@@ -1,6 +1,4 @@
-hello i'm the file
-
-
+hola soy archivo
 ## Preámbulo
 
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
@@ -19,4 +17,4 @@ en formato `Markdown`, para verificar los links que contengan y reportar
 algunas estadísticas.
 [roto](https://developer.mo3zilla.org/)
 
-## Resumen del proyecto
+## Introducción

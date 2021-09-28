@@ -15,7 +15,7 @@ mdLinks.mdLinks(route, options)
     } else if (options && options.validate) {
         resolve(obj.optionValidate(route));
     } else {
-        const stringLinks = links.map((link) => `${path.relative(process.cwd(), link.filePath)} ${link.hrefPath} ${link.textPath}`);
+        const stringLinks = links.map((link) => `${path.relative(process.cwd(),link.filePath)} ${link.hrefPath} ${link.textPath}`);
         resolve(stringLinks.join('\n'));
     }
     }).catch((err) => {

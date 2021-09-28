@@ -31,13 +31,12 @@ if (directory) {
 const listFilesMd = (list) => list.filter(file => path.extname(file) === '.md'); 
 // console.log((listFilesMd([ 
 //     'C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\src\\cli.js',
-//     'C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\src\\md-links.js',
-//     'C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\src\\method.js',
-//     'C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\src\\prueba\\preuba.md',
-//     'C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\src\\prueba\\prueba1.md',
-//     'C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\src\\text.txt'])));
+//     'C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\src\\test\\tesData\\subPath',
+//     'C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\src\\test\\tesData',
+//     'C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\src\\test\\tesData\\subData\\prueba.md'
     
-
+// ])));
+// console.log(listFilesMd('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\test'))
 // Pasar a ruta absoluta
 const toPathAbsolute = (list) => { 
     return list.map(element => {
@@ -61,7 +60,7 @@ const readFileMd = (route) => {
     });
     return links;
 };
-//  console.log(readFileMd('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md'));
+//   console.log(readFileMd('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\test\\testData\\prueba.md'));
 
  // Función para validar los links OK or FAIL
 const linksValidate = (route) => {
@@ -89,7 +88,7 @@ const linksValidate = (route) => {
     return Promise.all(arrLinksPromise);
 };
 
-// linksValidate('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\README.md').then(response =>(
+// linksValidate('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\test\\tesData\\subPath\\prueba.md').then(response =>(
 //     console.log(response)
 // ))
 

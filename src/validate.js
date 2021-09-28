@@ -15,7 +15,7 @@ if (fs.existsSync(route)) {
 }
 });
 
-// console.log(mdLinks('./src/',obj));
+//  console.log(mdLinks('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\test\\tesData\\subPath\\prueba.md',obj));
 
 module.exports = { mdLinks };
 
