@@ -7,7 +7,7 @@ const statsMdLinks = (route, options) => new Promise((resolve, reject) => {
 mdLinks.mdLinks(route, options)
     .then((links) => {
     if (links.length === 0) {
-        resolve('El archivo o directorio no cuentiene links');
+        resolve('El archivo o directorio no contiene links');
     } else if (options && options.stats && options.validate) {
         resolve(obj.OptionsValidateStats(route));
     } else if (options && options.stats) {
