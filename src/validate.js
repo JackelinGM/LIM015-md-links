@@ -14,19 +14,6 @@ if (fs.existsSync(route)) {
     reject(new Error(`No se encuentra la ruta: ${path.resolve(route)}`));
 }
 });
-
-//  console.log(mdLinks('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\test\\tesData\\subPath\\prueba.md',obj));
+//   console.log(mdLinks('C:\\Users\\Casa\\Desktop\\LABORATORIA\\LIM015-md-links\\test\\testData\\prueba.md',obj));
 
 module.exports = { mdLinks };
-
-
-
-
-
-
-
-// Métodos habituales de fs
-// readFile(path, callback) : Leer un archivo.
-// writeFile(path, data, callback) : Escribir un archivo y, si existe, sobreescribir.
-// appendFile(path, data, callback) : Añade información a un archivo existente.
-// watchFile(path, callback) : Observar cambios en un archivo concreto.
