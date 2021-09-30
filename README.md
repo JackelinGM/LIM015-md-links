@@ -155,5 +155,6 @@ Para desinstalar use el comando:
 - [ ] Linting
 
 ***
-**Autor:** Melissa Gutierrez Montalbán.  
+**Autor:** [Melissa Gutierrez Montalbán](https://github.com/JackelinGM/LIM015-md-links)
+ 
 **Generación:** LIM015 Laboratoria Perú.
